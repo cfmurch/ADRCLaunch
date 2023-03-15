@@ -123,6 +123,8 @@ footer {
 }
 ```
 
+<!-- EDIT SIDEBAR LINKS HERE -->
+
 ```{r}
 # links on sidebar
 sidebar_links <- list(
@@ -150,6 +152,8 @@ example_button <- htmltools::div(
   )
 )
 ```
+
+<!-- EDIT MAIN TEXT HERE -->
 
 ```{r}
 # header and paragraphs within the main panel
