@@ -99,7 +99,7 @@ footer {
 
 #mainPanel p {
   font-size: 16px;
-  line-height: 32px;
+  line-height: 200%;
   margin-bottom: 1.5em;
 }
 
@@ -140,6 +140,12 @@ sidebar_links_html <- lapply(sidebar_links, function(x) {
     x[['name']]
   )
 })
+
+# add header
+sidebar_content <- htmltools::tagList(
+  htmltools::h3('Resources'),
+  sidebar_links_html
+)
 ```
 
 ```{r}
@@ -147,7 +153,7 @@ sidebar_links_html <- lapply(sidebar_links, function(x) {
 example_button <- htmltools::div(
   class = 'green-button',
   htmltools::a(
-    href = 'link/to/side',
+    href = 'link/to/page',
     'My button'
   )
 )
@@ -193,8 +199,7 @@ shiny::fluidPage(
     shiny::sidebarPanel(
       width = 4,
       id = 'sidebar',
-      htmltools::h3('Resources'),
-      sidebar_links_html
+      sidebar_content
     ),
     
     shiny::mainPanel(
